@@ -69,7 +69,6 @@ public class Constructor extends Builder implements Runnable {
             }
             HW2Logger.getInstance().Log(0, 0, 0, ID, Action.CONSTRUCTOR_FINISHED);
             this.ConstructorProduced();
-            // System.out.println("Constructor "+ ID + "stucked");
         }
         HW2Logger.getInstance().Log(0, 0, 0, ID, Action.CONSTRUCTOR_STOPPED);
         this.ConstructorStopped();

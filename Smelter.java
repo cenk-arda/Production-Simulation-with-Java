@@ -105,7 +105,6 @@ public class Smelter extends Builder implements Runnable {
             this.ingotsInOutgoingStorage++;
             HW2Logger.getInstance().Log(0, ID, 0, 0, Action.SMELTER_FINISHED);
             this.IngotProduced();
-           // System.out.println("Smelter "+ ID + "stucked");
         }
         this.SmelterStopped();
         HW2Logger.getInstance().Log(0, ID, 0, 0, Action.SMELTER_STOPPED);
@@ -142,10 +141,8 @@ public class Smelter extends Builder implements Runnable {
         while (isOutgoingFull()) {//or if?
             this.getLock().lock();
             try {
-                //System.out.println(oresInIncomingStorage);
                 this.getAnItemTakenCondition().await();
 
-                //unlock here?
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {

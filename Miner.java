@@ -77,7 +77,6 @@ public class Miner extends Builder implements Runnable{
             this.producedOres++;
             HW2Logger.getInstance().Log(ID, 0, 0, 0, Action.MINER_FINISHED);
             this.OreProduced();
-            //System.out.println("Miner "+ ID + "stucked");
         }
         this.MinerStopped();
         HW2Logger.getInstance().Log(ID, 0, 0, 0, Action.MINER_STOPPED);
@@ -87,8 +86,6 @@ public class Miner extends Builder implements Runnable{
         while (this.isFull()) {//or if?
             this.getLock().lock();
             try {
-                //System.out.println(producedOres);
-
                 this.getAnItemTakenCondition().await();
             } catch (InterruptedException e) {
                 e.printStackTrace();

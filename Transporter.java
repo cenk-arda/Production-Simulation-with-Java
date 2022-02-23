@@ -103,9 +103,6 @@ public class Transporter implements Runnable {
             HW2Logger.getInstance().Log(0, this.sourceSmelterID, ID, 0, Action.TRANSPORTER_GO);
         }
         while (source.isActive() || (source.OutStorageCount() > 0) ) {
-//            if(ID==2){
-//                System.out.println("2 girdi");
-//            }
             this.SleepForTravelling();
             if (this.source.typeOfBuilder() == Type.MINER) {
                 HW2Logger.getInstance().Log(this.sourceMinerID, 0, ID, 0, Action.TRANSPORTER_ARRIVE);
@@ -157,7 +154,6 @@ public class Transporter implements Runnable {
             else{
                 HW2Logger.getInstance().Log(0, this.sourceSmelterID, ID, this.targetConstructorID, Action.TRANSPORTER_GO);
             }
-           // System.out.println("Transporter "+ ID + "stucked");
 
         }
 
